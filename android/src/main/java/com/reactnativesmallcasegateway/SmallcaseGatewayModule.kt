@@ -270,7 +270,7 @@ class SmallcaseGatewayModule(reactContext: ReactApplicationContext) : ReactConte
 
     @ReactMethod
     fun triggerLeadGenWithStatus(userDetails: ReadableMap, promise: Promise) {
-        val activity = currentActivity
+        val activity = reactApplicationContext.currentActivity
         if (activity != null) {
 
             SmallcaseGatewaySdk.triggerLeadGen(activity, readableMapToStrHashMap(userDetails), object : LeadGenResponseListener {
